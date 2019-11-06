@@ -2,9 +2,10 @@ import '../lib/cdd_lib.dart';
 import 'package:test/test.dart';
 
 void main() {
-  String str1 = uniqueStr();
-  String str2 = uniqueStr();
-  String str3 = uniqueStr(length: 10);
+  GenerateUniqueString gstr = GenerateUniqueString();
+  String str1 = gstr.getString();
+  String str2 = gstr.getString();
+  String str3 = gstr.getString(length: 10);
   group('uniqueStr test:', () {
     print('str1: $str1\nstr2: $str2\nstr3: $str3');
     test('默认的长度是 is 15', () {
