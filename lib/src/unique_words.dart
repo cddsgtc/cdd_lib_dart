@@ -18,7 +18,7 @@ String uniqueStr({int length = 15}) {
 
 class GenerateUniqueString {
   int length;
-  final String base =
+  static final String base =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   final Random rdm = Random();
 
