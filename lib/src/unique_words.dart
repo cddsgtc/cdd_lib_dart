@@ -1,6 +1,6 @@
 import 'dart:math';
 
-/// 生成唯一字符函数
+/// 生成不重复字符函数
 String uniqueStr({int length = 15}) {
   final String base =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -16,6 +16,7 @@ String uniqueStr({int length = 15}) {
   return str;
 }
 
+/// 生成不重复字符串类
 class GenerateUniqueString {
   int length;
   static final String base =
