@@ -1,0 +1,5 @@
+name: cdd_lib
+version: 0.0.1
+
+dependencies:
+  test: ^1.9.3
