@@ -19,7 +19,7 @@ String uniqueStr({int length = 15}) {
 /// 生成不重复字符串类
 class GenerateUniqueString {
   int length;
-  static final String base =
+  static const String base =
       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   final Random rdm = Random();
 
@@ -30,7 +30,7 @@ class GenerateUniqueString {
     String str = '';
     var timeStamp =
         DateTime.now().millisecondsSinceEpoch.toString().substring(8, 13);
-        
+
     length ??= this.length;
     if (length <= 0) length = 15;
 
