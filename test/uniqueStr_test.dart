@@ -1,12 +1,8 @@
-import '../lib/cdd_lib.dart';
+import 'package:cdd_lib/cdd_lib.dart';
 import 'package:test/test.dart';
 
-void main() {
-  GenerateUniqueString gstr = GenerateUniqueString();
-  String str1 = gstr.getString();
-  String str2 = gstr.getString();
-  String str3 = gstr.getString(length: 10);
-  group('uniqueStr test:', () {
+void toTest({String startStr, String str1, String str2, String str3}) {
+  group(startStr, () {
     print('str1: $str1\nstr2: $str2\nstr3: $str3');
     test('默认的长度是 is 15', () {
       expect(str1.length, equals(15));
@@ -21,4 +17,22 @@ void main() {
       expect(str1.runtimeType, equals(String));
     });
   });
+}
+
+void main() async {
+  GenerateUniqueString gstr = GenerateUniqueString();
+  String str1 = gstr.getString();
+  String str2 = gstr.getString();
+  String str3 = gstr.getString(length: 10);
+  await toTest(
+      startStr: 'GenerateUniqueString test:',
+      str1: str1,
+      str2: str2,
+      str3: str3);
+  print('second test');
+  toTest(
+      startStr: 'uniqueStr test:',
+      str1: uniqueStr(),
+      str2: uniqueStr(),
+      str3: uniqueStr(length: 10));
 }

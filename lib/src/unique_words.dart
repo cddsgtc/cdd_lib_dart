@@ -25,14 +25,15 @@ class GenerateUniqueString {
 
   GenerateUniqueString({this.length = 15});
 
+  /// 用来生成唯一字符串的内部方法，
   String getString({int length}) {
-    length ??= this.length;
-    if (length <= 0) {
-      length = 15;
-    }
     String str = '';
     var timeStamp =
         DateTime.now().millisecondsSinceEpoch.toString().substring(8, 13);
+        
+    length ??= this.length;
+    if (length <= 0) length = 15;
+
     if (length > 15) {
       for (int i = 0; i < 5; i++) {
         str += base[int.parse(timeStamp[i])];

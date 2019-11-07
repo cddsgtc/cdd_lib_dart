@@ -91,17 +91,20 @@
 (<wbr>{<span class="parameter" id="getString-param-length"><span class="type-annotation">int</span> <span class="parameter-name">length</span></span> })
       
     </section>
+    <section class="desc markdown">
+      <p>用来生成唯一字符串的内部方法，</p>
+    </section>
     
     <section class="summary source-code" id="source">
       <h2><span>Implementation</span></h2>
       <pre class="language-dart"><code class="language-dart">String getString({int length}) {
-  length ??= this.length;
-  if (length &lt;= 0) {
-    length = 15;
-  }
   String str = &#39;&#39;;
   var timeStamp =
       DateTime.now().millisecondsSinceEpoch.toString().substring(8, 13);
+
+  length ??= this.length;
+  if (length &lt;= 0) length = 15;
+
   if (length &gt; 15) {
     for (int i = 0; i &lt; 5; i++) {
       str += base[int.parse(timeStamp[i])];
